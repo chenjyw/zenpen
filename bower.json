@@ -1,0 +1,7 @@
+{
+  "name": "zenpen",
+  "version": "1.0",
+  "main": "./js/zenpen.js",
+  "dependencies": {
+  }
+}
