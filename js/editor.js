@@ -21,26 +21,13 @@ var editor = (function() {
 		selection.addRange(range);
 
 		createEventBindings();
-
-		// Load state if storage is supported
-		if ( supportsHtmlStorage() ) {
-			loadState();
-		}
 	}
 
 	function createEventBindings() {
 
 		// Key up bindings
-		if ( supportsHtmlStorage() ) {
 
-			document.onkeyup = function( event ) {
-				checkTextHighlighting( event );
-				saveState();
-			}
-
-		} else {
-			document.onkeyup = checkTextHighlighting;
-		}
+		document.onkeyup = checkTextHighlighting;
 
 		// Mouse bindings
 		document.onmousedown = checkTextHighlighting;
@@ -215,23 +202,6 @@ var editor = (function() {
 		return !!nodeList[ name ];
 	}
 
-	function saveState( event ) {
-		
-		localStorage[ 'header' ] = headerField.innerHTML;
-		localStorage[ 'content' ] = contentField.innerHTML;
-	}
-
-	function loadState() {
-
-		if ( localStorage[ 'header' ] ) {
-			headerField.innerHTML = localStorage[ 'header' ];
-		}
-
-		if ( localStorage[ 'content' ] ) {
-			contentField.innerHTML = localStorage[ 'content' ];
-		}
-	}
-
 	function onBoldClick() {
 		document.execCommand( 'bold', false );
 	}
@@ -326,18 +296,7 @@ var editor = (function() {
 	function rehighlightLastSelection() {
 
 		window.getSelection().addRange( lastSelection );
-	}
-
-	function getWordCount() {
-		
-		var text = get_text( contentField );
-
-		if ( text === "" ) {
-			return 0
-		} else {
-			return text.split(/\s+/).length;
-		}
-	}
+	}	
 
 	function onCompositionStart ( event ) {
 		composing = true;
@@ -349,8 +308,6 @@ var editor = (function() {
 
 	return {
 		init: init,
-		saveState: saveState,
-		getWordCount: getWordCount
 	}
 
 })();
