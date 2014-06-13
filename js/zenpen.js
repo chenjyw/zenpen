@@ -10,7 +10,7 @@ var ZenPen = (function() {
 	var textOptions, optionsBox, urlButton, urlInput;
 
 	// Editor UI
-	var body, article, overlay;
+	var body;
 
 	var composing;
 
@@ -70,13 +70,7 @@ var ZenPen = (function() {
 		urlInput.onkeydown = onUrlInputKeyDown;
 
 		// Body element for light/dark styles
-		body = document.body;
-		
-		// Overlay when modals are active
-		overlay = document.querySelector( '.overlay' );
-		overlay.onclick = onOverlayClick;
-
-		article = document.querySelector( '.with-toolbar' );		
+		body = document.body;		
 	}
 
 	function checkTextHighlighting( event ) {
@@ -182,26 +176,6 @@ var ZenPen = (function() {
 		return !!nodeList[ name ];
 	}
 
-	function onBoldClick() {
-		document.execCommand( 'bold', false );
-	}
-
-	function onItalicClick() {
-		document.execCommand( 'italic', false );
-	}
-
-	function onQuoteClick() {
-
-		var nodeNames = findNodes( window.getSelection().focusNode );
-
-		if ( hasNode( nodeNames, 'BLOCKQUOTE' ) ) {
-			document.execCommand( 'formatBlock', false, 'p' );
-			document.execCommand( 'outdent' );
-		} else {
-			document.execCommand( 'formatBlock', false, 'blockquote' );
-		}
-	}
-
 	function onUrlClick() {
 
 		if ( optionsBox.className == 'options' ) {
@@ -283,25 +257,6 @@ var ZenPen = (function() {
 
 	function onCompositionEnd (event) {
 		composing = false;
-	}
-
-	function onOverlayClick( event ) {
-
-		if ( event.target.className === "overlay" ) {
-			removeOverlay();
-		}
-	}
-
-	function removeOverlay() {
-		
-		overlay.style.display = "none";
-		descriptionModal.style.display = "none";
-		saveModal.style.display = "none";
-		
-		if ( document.querySelectorAll('span.activesave' ).length > 0) {
-			document.querySelector('span.activesave').className = '';
-		}
-
 	}	
 
 	return {
