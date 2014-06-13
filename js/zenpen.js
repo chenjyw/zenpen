@@ -248,8 +248,9 @@ var ZenPen = (function() {
 	}
 
 	function rehighlightLastSelection() {
-
+		
 		window.getSelection().addRange( lastSelection );
+		
 	}	
 
 	function onCompositionStart ( event ) {
