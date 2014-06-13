@@ -11,15 +11,7 @@
 		<!-- CSS -->
 		<link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href="css/style.css" rel="stylesheet">
-		<link href="css/fonts.css" rel="stylesheet">
-
-		<!-- LIBS -->
-		<script src="js/libs/head.min.js"></script>
-		<script src="js/libs/FileSaver.min.js"></script>
-		<script src="js/libs/Blob.js"></script>
-		<script src="js/libs/fullScreen.js"></script>
 		
-		<!-- JS loading in footer -->
 
     </head>
 
@@ -55,11 +47,8 @@
 			<div class="options">
 				<span class="no-overflow">
 					<span class="lengthen ui-inputs">
-						<button class="url useicons">&#xe005;</button>
+						<button class="url useicons"><img src="css/link.png"></button>
 						<input class="url-input" type="text" placeholder="Type or Paste URL here"/>
-						<button class="bold">b</button>
-						<button class="italic">i</button>
-						<button class="quote">&rdquo;</button>
 					</span>
 				</span>
 			</div>
@@ -104,7 +93,7 @@
 				This is ZenPen
 			</header>
 
-			<article contenteditable="true" class="content">
+			<article contenteditable="true" class="with-toolbar">
 
 				<p>
 					A minimalist writing zone, where you can block out all distractions and get to what's important. The writing!
@@ -133,19 +122,9 @@
 		</section>
 
 		<!-- JS -->
+		<script src="js/zenpen.js"></script>
 		<script type="text/javascript">
-			// Load required scripts.	
-			head.js( 
-				"js/utils.js",
-				"js/ui.js",
-				"js/editor.js",
-	        	function(){
-	            	
-	            	// Initiate ZenPen
-	            	editor.init();
-	    			ui.init();
-	            }
-	        );
+	    	ZenPen.init();
         </script>
 	</body>
 </html>
