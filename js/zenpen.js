@@ -99,7 +99,8 @@ var ZenPen = (function() {
 			currentNodeList = findNodes( selection.focusNode );
 
 			// Find if highlighting is in the editable area
-			if ( hasNode( currentNodeList, "ARTICLE") ) {
+			var classPattern = /\bwith-toolbar\b/;
+			if ( !!event.target.className.match(classPattern) ) {
 				updateBubbleStates();
 				updateBubblePosition();
 

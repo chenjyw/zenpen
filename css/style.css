@@ -11,6 +11,10 @@
  * BASE STYLES
  *********************************************/
 
+body {
+	background-color: darkgray;
+	color: #fff;
+}
 * {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -98,7 +102,7 @@
 	position: absolute;
 	left: -999px;
 	top: -999px;
-	color: #fff;
+	color: #000;
 	height: 0px;
 	width: 0px;
 	z-index: 5;
@@ -117,7 +121,7 @@
 }
 
 .options {
-	background-color: rgba(0,0,0,0.9);
+	background-color: rgba(255,255,255,0.9);
 	position: absolute;
 	border-radius: 5px;
 	margin-left: -20px;
@@ -192,7 +196,7 @@
 }
 
 .options button.active {
-	background-color: rgba(255,255,255,0.4);
+	background-color: rgba(0,0,0,0.4);
 	opacity: 1;
 }
 
@@ -202,7 +206,7 @@
 
 .options:before {
 	content: "";
-	border-top: 5px solid rgba(0,0,0,0.9);
+	border-top: 5px solid rgba(255,255,255,0.9);
 	border-bottom: 5px solid transparent;
 	border-right: 5px solid transparent;
 	border-left: 5px solid transparent;
