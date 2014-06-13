@@ -77,10 +77,11 @@ var ZenPen = (function() {
 
 		var selection = window.getSelection();
 
+		console.log(event);
 
 		if ( (event.target.className === "url-input" ||
 		     event.target.classList.contains( "url" ) ||
-		     event.target.parentNode.classList.contains( "ui-inputs")) ) {
+		     event.target.classList.contains( "url-input")) ) {
 
 			currentNodeList = findNodes( selection.focusNode );
 			updateBubbleStates();
@@ -248,7 +249,7 @@ var ZenPen = (function() {
 	}
 
 	function rehighlightLastSelection() {
-		
+
 		window.getSelection().addRange( lastSelection );
 		
 	}	
