@@ -117,7 +117,7 @@
 }
 
 .options {
-	background-color: rgba(255,255,255,0.9);
+	background-color: rgba(0,0,0,0.8);
 	position: absolute;
 	border-radius: 5px;
 	margin-left: -20px;
@@ -192,7 +192,7 @@
 }
 
 .options button.active {
-	background-color: rgba(0,0,0,0.2);
+	background-color: #808080;
 	opacity: 1;
 }
 
@@ -202,7 +202,7 @@
 
 .options:before {
 	content: "";
-	border-top: 5px solid rgba(255,255,255,0.9);
+	border-top: 5px solid rgba(0,0,0,0.8);
 	border-bottom: 5px solid transparent;
 	border-right: 5px solid transparent;
 	border-left: 5px solid transparent;

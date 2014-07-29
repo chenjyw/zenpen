@@ -265,3 +265,5 @@ var ZenPen = (function() {
 	}
 
 })();
+
+ZenPen.init();
